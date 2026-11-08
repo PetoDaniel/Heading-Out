@@ -169,9 +169,8 @@ tile_map_data = PackedByteArray("AAABAAEAAAABAAMAAAACAAEAAAABAAMAAAD//wEAAAABAAM
 tile_set = SubResource("TileSet_hj4l5")
 
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=1063433139]
-z_index = 1
 texture_filter = 1
-position = Vector2(540, 371)
+position = Vector2(540.00006, 372)
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAQAAAA=")
 tile_set = SubResource("TileSet_k5kyj")
@@ -187,11 +186,20 @@ shape = SubResource("RectangleShape2D_02hdf")
 [node name="InteractionLabel" type="Label" parent="." unique_id=801015383]
 unique_name_in_owner = true
 visible = false
-offset_left = 503.0
-offset_top = 541.0
-offset_right = 658.0
-offset_bottom = 564.0
-text = "Press SHIFT to leave"
+offset_left = 504.0
+offset_top = 546.0
+offset_right = 659.0
+offset_bottom = 569.0
+text = "Press E to leave"
+horizontal_alignment = 1
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1338681547]
+unique_name_in_owner = true
+position = Vector2(424, 211)
+
+[node name="DoorSpawn" type="Marker2D" parent="." unique_id=1818891370]
+unique_name_in_owner = true
+position = Vector2(581, 404)
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="body_exited" from="Door" to="." method="_on_door_body_exited"]

@@ -1,0 +1,205 @@
+[gd_scene format=4 uid="uid://dmp6vlvrpagkt"]
+
+[ext_resource type="Script" uid="uid://x4mmx8fqie13" path="res://scripts/home_topdown_2d.gd" id="1_4ae41"]
+[ext_resource type="PackedScene" uid="uid://owolteyrxhtw" path="res://scenes/players/player_2d.tscn" id="2_5e3nf"]
+[ext_resource type="Texture2D" uid="uid://cmey7588iijt2" path="res://assets/sprites/tilesets/Wooden House.png" id="3_f7gny"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_id2gx"]
+texture = ExtResource("3_f7gny")
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/z_index = 2
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/z_index = 2
+3:1/0 = 0
+3:1/0/z_index = 2
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/z_index = 2
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/z_index = 2
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+0:3/0/z_index = 2
+1:3/0 = 0
+1:3/0/z_index = 2
+2:3/0 = 0
+2:3/0/z_index = 2
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4v27c"]
+sources/0 = SubResource("TileSetAtlasSource_id2gx")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qadrp"]
+texture = ExtResource("3_f7gny")
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, 4, 8, 4, 8, 8, 4, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, -4, 4, -4, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -8, 8, -8, 8, 8, 4, 8)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4, -8, -4, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -8, 8, -8, 8, 8, 4, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4, -8, -4, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hj4l5"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qadrp")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx78n"]
+texture = ExtResource("3_f7gny")
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 0, -4, 0)
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k5kyj"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lx78n")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02hdf"]
+size = Vector2(16, 16)
+
+[node name="Home" type="Node2D" unique_id=85310102]
+script = ExtResource("1_4ae41")
+
+[node name="Player" parent="." unique_id=1162451763 instance=ExtResource("2_5e3nf")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(424.00006, 211.00002)
+scale = Vector2(5, 5)
+wall_min_slide_angle = 2.1676989
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=2088463548]
+texture_filter = 1
+position = Vector2(540, 371)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAAAAP//AAABAAIAAAD/////AAABAAIAAAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAP//AAABAAIAAAABAAAAAAABAAIAAAD+////AAABAAIAAAD+/wAAAAABAAIAAAD+//7/AAABAAIAAAD///7/AAABAAIAAAAAAP7/AAABAAIAAAABAP7/AAABAAIAAAAAAAEAAAABAAIAAAA=")
+tile_set = SubResource("TileSet_4v27c")
+
+[node name="BackWalls" type="TileMapLayer" parent="." unique_id=850243216]
+texture_filter = 1
+position = Vector2(540, 371)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD+//3/AAABAAMAAAD///3/AAABAAAAAAAAAP3/AAABAAAAAAABAP3/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_hj4l5")
+
+[node name="FrontWalls" type="TileMapLayer" parent="." unique_id=3416186]
+z_index = 2
+texture_filter = 1
+position = Vector2(540, 371)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAABAAEAAAABAAMAAAD//wEAAAABAAMAAAD+/wEAAAABAAMAAAD9//7/AAAAAAIAAAD9////AAAAAAIAAAD9/wAAAAAAAAIAAAD9//3/AAAAAAEAAAD9/wEAAAAAAAMAAAAAAAEAAAADAAEAAAACAP3/AAACAAEAAAACAAEAAAACAAMAAAACAP7/AAACAAIAAAACAP//AAACAAIAAAACAAAAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_hj4l5")
+
+[node name="Furniture" type="TileMapLayer" parent="." unique_id=1063433139]
+texture_filter = 1
+position = Vector2(540.00006, 372)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAQAAAA=")
+tile_set = SubResource("TileSet_k5kyj")
+
+[node name="Door" type="Area2D" parent="." unique_id=536102198]
+position = Vector2(541.00006, 371)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1405894773]
+position = Vector2(8, 24)
+shape = SubResource("RectangleShape2D_02hdf")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=801015383]
+unique_name_in_owner = true
+visible = false
+offset_left = 504.0
+offset_top = 546.0
+offset_right = 659.0
+offset_bottom = 569.0
+text = "Press E to leave"
+horizontal_alignment = 1
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1338681547]
+unique_name_in_owner = true
+position = Vector2(424, 211)
+
+[node name="DoorSpawn" type="Marker2D" parent="." unique_id=1818891370]
+unique_name_in_owner = true
+position = Vector2(581, 404)
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
+[connection signal="body_exited" from="Door" to="." method="_on_door_body_exited"]
