@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://t3ylc7btnjql"]
 
+[ext_resource type="Script" uid="uid://x4mmx8fqie13" path="res://scripts/home_topdown_2d.gd" id="1_rcfe2"]
 [ext_resource type="Texture2D" uid="uid://cmey7588iijt2" path="res://assets/sprites/tilesets/Wooden House.png" id="1_u7l4o"]
 [ext_resource type="PackedScene" uid="uid://owolteyrxhtw" path="res://scenes/players/player_2d.tscn" id="2_rcfe2"]
 
@@ -136,6 +137,14 @@ sources/0 = SubResource("TileSetAtlasSource_lx78n")
 size = Vector2(16, 16)
 
 [node name="Home" type="Node2D" unique_id=85310102]
+script = ExtResource("1_rcfe2")
+
+[node name="Player" parent="." unique_id=1162451763 instance=ExtResource("2_rcfe2")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(424.00006, 211.00002)
+scale = Vector2(5, 5)
+wall_min_slide_angle = 2.1676989
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=2088463548]
 texture_filter = 1
@@ -168,15 +177,21 @@ tile_map_data = PackedByteArray("AAAAAP//AAAAAAQAAAA=")
 tile_set = SubResource("TileSet_k5kyj")
 
 [node name="Door" type="Area2D" parent="." unique_id=536102198]
-position = Vector2(540, 371)
+position = Vector2(541.00006, 371)
 scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1405894773]
 position = Vector2(8, 24)
 shape = SubResource("RectangleShape2D_02hdf")
 
-[node name="Player" parent="." unique_id=1162451763 instance=ExtResource("2_rcfe2")]
-z_index = 1
-position = Vector2(516, 367)
-scale = Vector2(5, 5)
-wall_min_slide_angle = 2.1676989
+[node name="InteractionLabel" type="Label" parent="." unique_id=801015383]
+unique_name_in_owner = true
+visible = false
+offset_left = 503.0
+offset_top = 541.0
+offset_right = 658.0
+offset_bottom = 564.0
+text = "Press SHIFT to leave"
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
+[connection signal="body_exited" from="Door" to="." method="_on_door_body_exited"]
