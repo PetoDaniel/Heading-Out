@@ -186,6 +186,7 @@ shape = SubResource("RectangleShape2D_02hdf")
 [node name="InteractionLabel" type="Label" parent="." unique_id=801015383]
 unique_name_in_owner = true
 visible = false
+oversampling_with_scale = 2
 offset_left = 504.0
 offset_top = 546.0
 offset_right = 659.0

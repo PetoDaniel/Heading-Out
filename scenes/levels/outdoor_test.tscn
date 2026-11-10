@@ -1,21 +1,96 @@
 [gd_scene format=3 uid="uid://b42qmwqtg6xb6"]
 
 [ext_resource type="Script" uid="uid://vyogvvwkc7kj" path="res://scripts/outdoor_test.gd" id="1_3gbdh"]
+[ext_resource type="PackedScene" uid="uid://owolteyrxhtw" path="res://scenes/players/player_2d.tscn" id="2_6534l"]
 
-[node name="Outdoor" type="Control" unique_id=632609081]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_s1rbv"]
+a = Vector2(800, 696)
+b = Vector2(800, -56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jvf8"]
+size = Vector2(90, 648)
+
+[node name="Outdoor" type="Node2D" unique_id=2093234826]
 script = ExtResource("1_3gbdh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1532768476]
-layout_mode = 1
+[node name="Player" parent="." unique_id=1162451763 instance=ExtResource("2_6534l")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(39.000008, 314)
+scale = Vector2(5, 5)
+
+[node name="Grass" type="ColorRect" parent="." unique_id=1532768476]
+custom_minimum_size = Vector2(1.67, 3.77)
+anchors_preset = -1
+anchor_right = 29.800001
+anchor_bottom = 17.2
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1102, 217)
+color = Color(0.2395092, 0.5924425, 0.36659044, 1)
+
+[node name="Road" type="ColorRect" parent="." unique_id=1385723414]
+custom_minimum_size = Vector2(1.67, 3.77)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 944.0
+offset_right = 1034.6802
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2395092, 0.5924425, 0.36659044, 1)
+scale = Vector2(2.298325, 1)
+color = Color(0.50425917, 0.48912024, 0.53467315, 1)
+
+[node name="Sidewalk" type="ColorRect" parent="." unique_id=1553058099]
+custom_minimum_size = Vector2(1.67, 3.77)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 757.0
+offset_right = 850.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.50425917, 0.48912024, 0.53467315, 1)
+
+[node name="SidewalkCollision" type="Area2D" parent="." unique_id=1123673516]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SidewalkCollision" unique_id=585881668]
+position = Vector2(-40, 0)
+shape = SubResource("SegmentShape2D_s1rbv")
+
+[node name="HomeCollision" type="Area2D" parent="." unique_id=4170583]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeCollision" unique_id=1057919228]
+position = Vector2(43, 324)
+shape = SubResource("RectangleShape2D_4jvf8")
+
+[node name="TextLabel" type="Label" parent="." unique_id=1331723631]
+unique_name_in_owner = true
+visible = false
+oversampling_with_scale = 2
+offset_left = 176.00002
+offset_top = 592.00006
+offset_right = 472.0
+offset_bottom = 615.00006
+scale = Vector2(1.63, 1.63)
+text = "Wait, I left my suitcase inside!"
+horizontal_alignment = 1
+text_direction = 1
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=966929818]
+visible = false
+oversampling_with_scale = 2
+offset_left = 224.0
+offset_top = 304.0
+offset_right = 345.0
+offset_bottom = 327.0
+scale = Vector2(1.595, 1.595)
+text = "Press E to enter"
+
+[connection signal="body_entered" from="SidewalkCollision" to="." method="_on_sidewalk_collision_body_entered"]
+[connection signal="body_entered" from="HomeCollision" to="." method="_on_home_collision_body_entered"]
+[connection signal="body_exited" from="HomeCollision" to="." method="_on_home_collision_body_exited"]
