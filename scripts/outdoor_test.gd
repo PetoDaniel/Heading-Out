@@ -11,7 +11,7 @@ func _on_sidewalk_collision_body_entered(body: Node2D) -> void:
 	if body == player:
 		if not player_reached_sidewalk:
 			text_label.show()
-		player_reached_sidewalk = true
+			player_reached_sidewalk = true
 		
 
 func _on_home_collision_body_entered(body: Node2D) -> void:

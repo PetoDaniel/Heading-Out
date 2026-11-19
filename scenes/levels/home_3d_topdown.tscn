@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bnufv18x8embj"]
+
+[ext_resource type="PackedScene" uid="uid://w8muy5ibnvrs" path="res://assets/sprites/Home3D_v1.glb" id="1_itbfi"]
+
+[node name="Home3D_v1" unique_id=1702359187 instance=ExtResource("1_itbfi")]

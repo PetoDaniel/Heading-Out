@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dlnh8eydptw2s"]
+
+[ext_resource type="PackedScene" uid="uid://w8muy5ibnvrs" path="res://assets/sprites/Home3D_v1.glb" id="1_80dev"]
+[ext_resource type="PackedScene" uid="uid://dpwqsmkkj0f51" path="res://scenes/players/player_3d_v_1.tscn" id="2_v4ni3"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_py6rj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80dev"]
+size = Vector3(4.436157, 2.5043945, 0.20928192)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1rbv"]
+size = Vector3(0.17773438, 2.5395508, 5.4065247)
+
+[node name="Home3D_1" type="Node3D" unique_id=166429792]
+
+[node name="Enviroment" type="Node3D" parent="." unique_id=530655174]
+
+[node name="Home3D_v1" parent="Enviroment" unique_id=1702359187 instance=ExtResource("1_80dev")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/Home3D_v1" unique_id=2119615326]
+
+[node name="Floor" type="CollisionShape3D" parent="Enviroment/Home3D_v1/StaticBody3D" unique_id=1575394509]
+shape = SubResource("WorldBoundaryShape3D_py6rj")
+
+[node name="LeftWall" type="CollisionShape3D" parent="Enviroment/Home3D_v1/StaticBody3D" unique_id=1649801576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007490635, 1.2495333, 2.607151)
+shape = SubResource("BoxShape3D_80dev")
+
+[node name="RightWall" type="CollisionShape3D" parent="Enviroment/Home3D_v1/StaticBody3D" unique_id=1200393862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007490635, 1.2495333, -2.6036139)
+shape = SubResource("BoxShape3D_80dev")
+
+[node name="BackWall" type="CollisionShape3D" parent="Enviroment/Home3D_v1/StaticBody3D" unique_id=2101305248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0903249, 1.2290995, -0.03126526)
+shape = SubResource("BoxShape3D_s1rbv")
+
+[node name="FrontWall" type="CollisionShape3D" parent="Enviroment/Home3D_v1/StaticBody3D" unique_id=1006350559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1009068, 1.2290995, -0.03126526)
+shape = SubResource("BoxShape3D_s1rbv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1599196011]
+transform = Transform3D(-1.571359e-08, -0.9331509, 0.35948503, -4.0789324e-08, 0.35948503, 0.9331509, -1, 1.7763568e-15, -4.371139e-08, 2.9807224, 9.125494, 0)
+visible = false
+keep_aspect = 0
+projection = 1
+size = 10.237928
+
+[node name="Player3D_v1" parent="." unique_id=800011204 instance=ExtResource("2_v4ni3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7005908, 0)
